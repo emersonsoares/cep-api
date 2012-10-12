@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace CorreiosRestful.API
 {
@@ -11,8 +8,8 @@ namespace CorreiosRestful.API
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "cep/{cep}",
+                defaults: new { controller = "Cep", action = "Get", cep = RouteParameter.Optional }
             );
         }
     }

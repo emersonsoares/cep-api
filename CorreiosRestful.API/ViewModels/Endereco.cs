@@ -12,6 +12,6 @@
 
         public string Logradouro { get; set; }
 
-        public string Numeros { get; set; }
+        public string TipoDeLogradouro { get; set; }
     }
 }
