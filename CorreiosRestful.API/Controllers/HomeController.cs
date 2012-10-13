@@ -6,6 +6,7 @@ namespace CorreiosRestful.API.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = "Correios RESTful API";
             return View();
         }
     }
