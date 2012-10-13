@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>WebApiCache</id>
+    <version>1.0.1</version>
+    <title>WebApiCache</title>
+    <authors>Emerson Soares</authors>
+    <owners>Emerson Soares</owners>
+    <projectUrl>https://github.com/emersonsoares/WebApiCache</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides OutputCache to WebApi projects in Asp Net</description>
+    <tags>Asp Net, Web Api, Cache</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

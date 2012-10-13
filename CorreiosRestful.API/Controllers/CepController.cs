@@ -3,6 +3,7 @@ using CsQuery;
 using System.IO;
 using System.Net;
 using System.Web.Http;
+using WebApiCache;
 
 namespace CorreiosRestful.API.Controllers
 {
@@ -18,6 +19,7 @@ namespace CorreiosRestful.API.Controllers
             return resposta.ContentLength != -1;
         }
 
+        [OutputCacheWebApi(86400)]
         public ObjetoRetorno Get(string cep)
         {
             CriaRequisicao();
@@ -33,6 +35,7 @@ namespace CorreiosRestful.API.Controllers
             return retorno;
         }
 
+        [OutputCacheWebApi(86400)]
         public ObjetoRetorno Get()
         {
             return new ObjetoRetorno { Mensagem = "Por favor informe um CEP para fazer a busca", TemErro = true };
@@ -42,7 +45,7 @@ namespace CorreiosRestful.API.Controllers
         {
             requisicao = WebRequest.Create("http://m.correios.com.br/movel/buscaCepConfirma.do");
             requisicao.ContentType = "application/x-www-form-urlencoded";
-            requisicao.Headers.Set(HttpRequestHeader.ContentEncoding, "iso-8859-1");
+            requisicao.Headers.Set(HttpRequestHeader.ContentEncoding, "utf-8");
             requisicao.Method = "POST";
         }
 
