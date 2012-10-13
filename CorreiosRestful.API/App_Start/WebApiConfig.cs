@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace CorreiosRestful.API
 {
@@ -11,6 +12,8 @@ namespace CorreiosRestful.API
                 routeTemplate: "cep/{cep}",
                 defaults: new { controller = "Cep", action = "Get", cep = RouteParameter.Optional }
             );
+
+            GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonpMediaTypeFormatter());
         }
     }
 }
