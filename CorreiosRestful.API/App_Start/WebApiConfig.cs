@@ -10,7 +10,8 @@ namespace CorreiosRestful.API
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "cep/{cep}",
-                defaults: new { controller = "Cep", action = "Get", cep = RouteParameter.Optional }
+                defaults: new { controller = "Cep", action = "Get" },
+				constraints: new { cep = @"^\d+$" } // Apenas inteiros
             );
 
             GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonpMediaTypeFormatter());
