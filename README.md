@@ -12,28 +12,16 @@ Em caso de sucesso:
 
 ```json
 {
-    Endereco: {
-        Bairro: "Setor Institucional"
-        Cep: "76872862"
-        Cidade: "Ariquemes"
-        Estado: "RO"
-        Logradouro: "Rio Madeira "
-        TipoDeLogradouro: "Rua"
-    }
-    Mensagem: "CEP encontrado com sucesso"
-    TemErro: false
+  Bairro: "Setor Institucional"
+  Cep: "76872862"
+  Cidade: "Ariquemes"
+  Estado: "RO"
+  Logradouro: "Rio Madeira "
+  TipoDeLogradouro: "Rua"
 }
 ```
 
-Em caso de erro:
-
-```json
-{
-    Endereco: null
-    Mensagem: "CEP não encontrado"
-    TemErro: true
-}
-```
+Em caso de erro de CEP não encontrado a API retornará o HTTP Status 404
 
 ### Exemplos de uso
 
@@ -41,14 +29,16 @@ Jquery:
 
 ```javascript
 $.ajax({
-  url: 'http://correiosapi.apphb.com/cep/78930000',
+  url: 'http://correiosapi.apphb.com/cep/76873274',
   dataType: 'jsonp',
   crossDomain: true,
   contentType: "application/json",
-  success: function(response){
-    console.log(response);
+  statusCode: {
+    200: function(data) { console.log(data); } // Ok
+    ,400: function(msg) { console.log(msg);  } // Bad Request
+    ,404: function(msg) { console.log("CEP não encontrado!!"); } // Not Found
   }
-});
+});​
 ```
 
 ### Contribua
