@@ -17,10 +17,10 @@ namespace CorreiosRestful.API.Controllers
 			requisicao.Headers.Set(HttpRequestHeader.ContentEncoding, "utf-8");
 			requisicao.Method = "POST";
 
-			var parse = new HTMLEnderecoParse(requisicao, cep);
+			var parser = new HTMLEnderecoParser(requisicao, cep);
 
-			if (parse.EhValido)
-				return Request.CreateResponse(HttpStatusCode.OK, parse.Endereco);
+			if (parser.EhValido)
+				return Request.CreateResponse(HttpStatusCode.OK, parser.Endereco);
 			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "CEP não encontrado!");
         }
 

@@ -5,12 +5,12 @@ using System.Net;
 
 namespace CorreiosRestful.API.Helpers
 {
-	public class HTMLEnderecoParse
+	public class HTMLEnderecoParser
 	{
 		private CQ _csQueryParsed;
 		public Endereco Endereco { get; private set; }
 
-		public HTMLEnderecoParse(WebRequest requisicao, int cep)
+		public HTMLEnderecoParser(WebRequest requisicao, int cep)
 		{
 			var bytes = System.Text.Encoding.ASCII.GetBytes(string.Format("cepEntrada={0}&tipoCep=&cepTemp&metodo=buscarCep", cep));
             requisicao.ContentLength = bytes.Length;
