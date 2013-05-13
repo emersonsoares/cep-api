@@ -134,7 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\EnderecoParse.cs" />
+    <Compile Include="Helpers\HtmlEnderecoParser.cs" />
     <Compile Include="ViewModels\Endereco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
