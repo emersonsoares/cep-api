@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Formatting;
 using System.Web.Http;
+using Newtonsoft.Json.Serialization;
 using WebApiContrib.Formatting.Jsonp;
 
 namespace CorreiosRestful.API
@@ -16,8 +17,9 @@ namespace CorreiosRestful.API
             );
 
             GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonpMediaTypeFormatter());
-            GlobalConfiguration.Configuration.Formatters.Remove(new XmlMediaTypeFormatter());
+            GlobalConfiguration.Configuration.Formatters.Remove(config.Formatters.XmlFormatter);
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.Indent = true;
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
