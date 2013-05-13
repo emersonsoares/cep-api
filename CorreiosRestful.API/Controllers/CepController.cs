@@ -9,7 +9,7 @@ namespace CorreiosRestful.API.Controllers
 {
     public class CepController : ApiController
     {
-        //[OutputCacheWebApi(86400)]
+        [OutputCacheWebApi(86400)]
         public HttpResponseMessage Get(int cep)
         {
             var requisicao = WebRequest.Create(ConfigurationManager.AppSettings["UriCorreios"]);
