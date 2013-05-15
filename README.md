@@ -1,6 +1,6 @@
-# Correios RESTful API
+# Address RESTful API
 
-API para desenvolvedores utilizarem em aplicações que precisem encontrar um endereço a partir do CEP informado. (Os dados vem direto dos correios)
+API para desenvolvedores utilizarem em aplicações que precisem encontrar um endereço a partir do CEP informado. (Os dados vem direto da base de dados dos correios)
 
 ### Acesse: [http://correiosapi.apphb.com/cep/76873274](http://correiosapi.apphb.com/cep/76873274)
 
@@ -12,12 +12,12 @@ Em caso de sucesso:
 
 ```json
 {
-  Bairro: "Setor Institucional"
-  Cep: "76872862"
-  Cidade: "Ariquemes"
-  Estado: "RO"
-  Logradouro: "Rio Madeira "
-  TipoDeLogradouro: "Rua"
+  bairro: "Setor Institucional"
+  cep: "76872862"
+  cidade: "Ariquemes"
+  estado: "RO"
+  logradouro: "Rio Madeira "
+  tipoDeLogradouro: "Rua"
 }
 ```
 
