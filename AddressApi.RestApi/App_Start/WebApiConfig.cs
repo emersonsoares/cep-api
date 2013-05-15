@@ -15,10 +15,12 @@ namespace AddressApi.RestApi.App_Start
                 constraints: new { zipCode = @"^\d+$" }
             );
 
-            config.Formatters.Insert(0, new JsonpMediaTypeFormatter());
+            var jsonpFormatter = new JsonpMediaTypeFormatter { Indent = true };
+
+            config.Formatters.Insert(0, jsonpFormatter);
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-            config.Formatters.JsonFormatter.Indent = true;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.Indent = true;
             config.EnableSystemDiagnosticsTracing();
         }
     }
