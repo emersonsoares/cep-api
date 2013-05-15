@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC149A10-26BE-43A8-9445-5F9A2E7EF997}</ProjectGuid>
+    <ProjectGuid>{B63AFEBD-2B50-4C2C-A00E-B6F5BC30DB5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AddressApi.Base</RootNamespace>
-    <AssemblyName>AddressApi.Base</AssemblyName>
+    <RootNamespace>AddressApi.Correios</RootNamespace>
+    <AssemblyName>AddressApi.Correios</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,9 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="IAddressRepository.cs" />
+    <Compile Include="CorreiosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddressApi.Base\AddressApi.Base.csproj">
+      <Project>{ec149a10-26be-43a8-9445-5f9a2e7ef997}</Project>
+      <Name>AddressApi.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
