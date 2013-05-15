@@ -5,17 +5,27 @@ namespace AddressApi.Base
 {
     public class Address : IEquatable<Address>
     {
-        public string TypeOfStreet { get; set; }
+        public Address(int zipCode, string typeOfStreet, string street, string neighborhood, string city, string estate)
+        {
+            ZipCode = zipCode;
+            TypeOfStreet = typeOfStreet;
+            Street = street;
+            Neighborhood = neighborhood;
+            City = city;
+            Estate = estate;
+        }
 
-        public string Street { get; set; }
+        public string TypeOfStreet { get; private set; }
 
-        public string Neighborhood { get; set; }
+        public string Street { get; private set; }
 
-        public string City { get; set; }
+        public string Neighborhood { get; private set; }
 
-        public string Estate { get; set; }
+        public string City { get; private set; }
 
-        public int ZipCode { get; set; }
+        public string Estate { get; private set; }
+
+        public int ZipCode { get; private set; }
 
         public bool Equals(Address other)
         {

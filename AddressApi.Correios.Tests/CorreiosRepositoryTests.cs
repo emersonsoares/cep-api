@@ -9,15 +9,7 @@ namespace AddressApi.Correios.Tests
         [TestMethod]
         public void CorreiosRepositoryGetAddressShouldBeReturnAValidAddress()
         {
-            var expected = new Address
-                               {
-                                   City = "Ariquemes",
-                                   Estate = "Rondônia",
-                                   Neighborhood = "Setor 02",
-                                   Street = "Juriti",
-                                   TypeOfStreet = "Rua",
-                                   ZipCode = 76873274
-                               };
+            var expected = new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
 
             var repository = new CorreiosRepository();
 

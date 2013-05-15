@@ -8,25 +8,8 @@ namespace AddressApi.Base.Tests
         [TestMethod]
         public void AddressShouldBeAValueObject()
         {
-            var address1 = new Address
-                               {
-                                   ZipCode = 76873274,
-                                   TypeOfStreet = "Rua",
-                                   Street = "Juriti",
-                                   Neighborhood = "Setor 02",
-                                   City = "Ariquemes",
-                                   Estate = "Rondônia"
-                               };
-
-            var address2 = new Address
-                                {
-                                    ZipCode = 76873274,
-                                    TypeOfStreet = "Rua",
-                                    Street = "Juriti",
-                                    Neighborhood = "Setor 02",
-                                    City = "Ariquemes",
-                                    Estate = "Rondônia"
-                                };
+            var address1 = new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
+            var address2 = new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
 
             Assert.IsTrue(address1.Equals(address2));
         }

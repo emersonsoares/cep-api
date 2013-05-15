@@ -6,15 +6,7 @@ namespace AddressApi.Correios
     {
         public Address GetAddress(int zipCode)
         {
-            return new Address
-            {
-                City = "Ariquemes",
-                Estate = "Rondônia",
-                Neighborhood = "Setor 02",
-                Street = "Juriti",
-                TypeOfStreet = "Rua",
-                ZipCode = 76873274
-            };
+            return new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
         }
     }
 }
