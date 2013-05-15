@@ -17,7 +17,6 @@ namespace AddressApi.RestApi
                 constraints: new { zipCode = @"^\d+$" }
             );
 
-            //GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonpMediaTypeFormatter());
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.Indent = true;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

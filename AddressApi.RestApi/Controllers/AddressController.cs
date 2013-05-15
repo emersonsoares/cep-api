@@ -11,10 +11,20 @@ namespace AddressApi.RestApi.Controllers
         public HttpResponseMessage Get(int zipCode)
         {
             var repository = new CorreiosRepository();
-
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, repository.GetAddress(zipCode));
+                var address = repository.GetAddress(zipCode);
+
+                var addressDTO = new
+                {
+                    Cep = address.ZipCode,
+                    TipoDeLogradouro = address.TypeOfStreet,
+                    Logradouro = address.Street,
+                    Bairro = address.Neighborhood,
+                    Cidade = address.City,
+                    Estado = address.Estate
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, addressDTO);
             }
             catch (Exception)
             {
