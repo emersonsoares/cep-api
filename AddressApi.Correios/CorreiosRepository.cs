@@ -6,7 +6,8 @@ namespace AddressApi.Correios
     {
         public Address GetAddress(int zipCode)
         {
-            return new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
+            var crawler = new CorreiosMobileCrawler(zipCode);
+            return crawler.ParseDocument();
         }
     }
 }

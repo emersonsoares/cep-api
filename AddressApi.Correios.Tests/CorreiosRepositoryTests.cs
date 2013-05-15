@@ -9,11 +9,14 @@ namespace AddressApi.Correios.Tests
         [TestMethod]
         public void CorreiosRepositoryGetAddressShouldBeReturnAValidAddress()
         {
-            var expected = new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "Rondônia");
+            var expected = new Address(76873274, "Rua", "Juriti", "Setor 02", "Ariquemes", "RO");
 
             var repository = new CorreiosRepository();
 
-            Assert.IsTrue(repository.GetAddress(76873274).Equals(expected));
+            var address = repository.GetAddress(76873274);
+
+            Assert.IsInstanceOfType(address, typeof(Address));
+            Assert.IsTrue(expected.Equals(address));
         }
     }
 }

@@ -44,6 +44,7 @@ namespace AddressApi.Base
 
                     if (left is Address)
                         return ReferenceEquals(left, right);
+
                     return left.Equals(right);
                 });
             }
