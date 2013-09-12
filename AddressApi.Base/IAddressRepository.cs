@@ -2,6 +2,6 @@
 {
     public interface IAddressRepository
     {
-        Address GetAddress(int zipCode);
+        Address GetAddress(string zipCode);
     }
 }

@@ -5,7 +5,7 @@ namespace AddressApi.Base
 {
     public class Address : IEquatable<Address>
     {
-        public Address(int zipCode, string typeOfStreet, string street, string neighborhood, string city, string estate)
+        public Address(string zipCode, string typeOfStreet, string street, string neighborhood, string city, string estate)
         {
             ZipCode = zipCode;
             TypeOfStreet = typeOfStreet;
@@ -25,7 +25,7 @@ namespace AddressApi.Base
 
         public string Estate { get; private set; }
 
-        public int ZipCode { get; private set; }
+        public string ZipCode { get; private set; }
 
         public bool Equals(Address other)
         {

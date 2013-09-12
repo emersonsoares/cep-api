@@ -11,9 +11,9 @@ namespace AddressApi.Correios
     {
         private readonly WebRequest _request;
 
-        private readonly int _zipCode;
+        private readonly string _zipCode;
 
-        public CorreiosMobileCrawler(int zipCode)
+        public CorreiosMobileCrawler(string zipCode)
         {
             _zipCode = zipCode;
             _request = WebRequest.Create(ConfigurationManager.AppSettings["UriCorreios"]);

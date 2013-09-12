@@ -8,7 +8,7 @@ namespace AddressApi.RestApi.Controllers
 {
     public class AddressController : ApiController
     {
-        public HttpResponseMessage Get(int zipCode)
+        public HttpResponseMessage Get(string zipCode)
         {
             var repository = new CorreiosRepository();
             try
