@@ -18,7 +18,6 @@ namespace AddressApi.RestApi.App_Start
             var jsonpFormatter = new JsonpMediaTypeFormatter { Indent = true };
 
             config.Formatters.Insert(0, jsonpFormatter);
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.Indent = true;
             config.EnableSystemDiagnosticsTracing();
