@@ -28,7 +28,7 @@ namespace AddressApi.RestApi.Controllers
             }
             catch (Exception)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Endereço não encontado!");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Endereço não encontrado!");
             }
         }
     }
