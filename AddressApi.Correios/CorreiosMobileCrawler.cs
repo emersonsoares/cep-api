@@ -1,9 +1,10 @@
-﻿using System.Configuration;
+﻿using AddressApi.Base;
+using CsQuery;
+using System;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Text;
-using AddressApi.Base;
-using CsQuery;
 
 namespace AddressApi.Correios
 {
@@ -16,16 +17,10 @@ namespace AddressApi.Correios
         public CorreiosMobileCrawler(string zipCode)
         {
             _zipCode = zipCode;
-            _request = WebRequest.Create(ConfigurationManager.AppSettings["UriCorreios"]);
+            _request = WebRequest.Create(string.Format(Uri.UnescapeDataString(ConfigurationManager.AppSettings["UriCorreios"]), zipCode));
             _request.ContentType = "application/x-www-form-urlencoded";
             _request.Headers.Set(HttpRequestHeader.ContentEncoding, "ISO-8859-1");
             _request.Method = "POST";
-            var requestParams = Encoding.ASCII.GetBytes(string.Format("cepEntrada={0}&tipoCep=&cepTemp&metodo=buscarCep", zipCode));
-            _request.ContentLength = requestParams.Length;
-
-            var requestStream = _request.GetRequestStream();
-            requestStream.Write(requestParams, 0, requestParams.Length);
-            requestStream.Close();
         }
 
         private string GetPageContent()
