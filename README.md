@@ -41,6 +41,16 @@ $.ajax({
 });​
 ```
 
+PHP:
+
+```php
+$curl = curl_init('http://correiosapi.apphb.com/cep/76873274');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$resposta = curl_exec($curl);
+$dadosCep = json_decode($resposta, true);
+```
+
 ### Contribua
 
 Faça um fork do projeto e ajude a melhorar o código, isso foi só uma brincadeira na madrugada!
