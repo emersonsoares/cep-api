@@ -12,11 +12,11 @@ Em caso de sucesso:
 
 ```json
 {
-  "bairro": "Setor Institucional"
-  "cep": "76872862"
-  "cidade": "Ariquemes"
-  "estado": "RO"
-  "logradouro": "Rio Madeira "
+  "bairro": "Setor Institucional",
+  "cep": "76872862",
+  "cidade": "Ariquemes",
+  "estado": "RO",
+  "logradouro": "Rio Madeira ",
   "tipoDeLogradouro": "Rua"
 }
 ```
