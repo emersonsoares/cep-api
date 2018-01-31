@@ -1,4 +1,6 @@
-# Address RESTful API
+# [OBSOLETO] Address RESTful API
+
+Este projeto está arquivado e não receberá mais atualizações.
 
 API para desenvolvedores utilizarem em aplicações que precisem encontrar um endereço a partir do CEP informado. (Os dados vem direto da base de dados dos correios)
 
